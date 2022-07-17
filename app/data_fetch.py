@@ -15,7 +15,7 @@ cursor = conn.execute('''SELECT * FROM snippets
 WHERE "language"="Go" AND "snippet" NOT LIKE '%/%'
 ''')
 
-with open('raw.csv', 'w') as file:
+with open('raw.csv', 'w', encoding='utf-8') as file:
     writer = csv.writer(file)
     writer.writerow(header)
     for row in cursor:
